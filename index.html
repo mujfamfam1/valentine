@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Emily>></title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+
+    background:linear-gradient(
+        90deg,
+        #7b00ff,
+        #b100ff,
+        #ff00ff,
+        #d400ff,
+        #7b00ff
+    );
+
+    background-size:400% 400%;
+    animation:gradient 8s ease infinite;
+
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+@keyframes gradient{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+h1{
+    font-size:clamp(28px, 5vw, 60px);
+    max-width:1000px;
+    line-height:1.4;
+
+    color:#ffe9ff;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+    <h1>
+        Эмилия, я не хочу конечно тебя заставлять, но...<br>
+        Ты бы захотела стать моей парой?
+    </h1>
+</body>
+</html>
