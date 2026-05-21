@@ -2,9 +2,11 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Emily</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emily>></title>
 
 <style>
+/* Стили для тела страницы, чтобы оно было прозрачным */
 body{
     margin:0;
     height:100vh;
@@ -13,31 +15,35 @@ body{
     align-items:center;
     text-align:center;
     padding:20px;
-
-    background:linear-gradient(
-        90deg,
-        #7b00ff,
-        #b100ff,
-        #ff00ff,
-        #d400ff,
-        #7b00ff
-    );
-
-    background-size:400% 400%;
-    animation:gradient 8s ease infinite;
-
     font-family:'Trebuchet MS', sans-serif;
+    overflow: hidden; /* Чтобы не было полос прокрутки из-за фона */
 }
 
-@keyframes gradient{
-    0%{
-        background-position:0% 50%;
-    }
-    50%{
-        background-position:100% 50%;
-    }
-    100%{
-        background-position:0% 50%;
+/* Стили для фонового изображения */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('image_4.png'); /* Ссылка на твое фото */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Поместить фон за текстом */
+}
+
+/* Специфичные стили для мобильных телефонов в портретной ориентации */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .background-image {
+        /* Вращение на 90 градусов по часовой стрелке */
+        transform: rotate(90deg);
+        /* Масштабирование, чтобы покрыть весь экран после поворота */
+        transform-origin: center center;
+        width: 100vh;
+        height: 100vw;
+        left: calc(50vw - 50vh);
+        top: calc(50vh - 50vw);
+        background-size: cover;
     }
 }
 
@@ -45,14 +51,34 @@ h1{
     font-size:clamp(28px, 5vw, 60px);
     max-width:1000px;
     line-height:1.4;
-
     color:#ffe9ff;
     font-weight:bold;
+    margin-bottom: 25px;
+    /* Добавим небольшую тень для лучшей читаемости на фоне */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
+
+.valentine-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
 }
 </style>
 </head>
 
 <body>
-    <h1>Стань моей парой, прошуу</h1>
+    <div class="background-image"></div>
+
+    <div>
+        <h1>
+            Эмилия, я не хочу конечно тебя заставлять, но...<br>
+            Ты бы захотела стать моей парой?
+        </h1>
+        <img src="https://images.prod.produmalka.ru/v1/content/b6b55eb8-3e42-4916-a36c-dfcbe207ccbe/raw" alt="Милый котик" class="valentine-image">
+    </div>
 </body>
 </html>
